@@ -1,0 +1,63 @@
+<div class="container-fluid text-center">
+    <div class="row justify-content-center">
+        <div class="col-md-4 profile-section">
+            <div class="card m-3">
+                <div class="card-body">
+                    <h3 class="card-title">{{ user?.name }}</h3>
+                    <p class="card-text mb-0">{{ user?.email }}.</p>
+                    <p class="card-text mb-0">{{ user?.address?.street }}, {{ user?.address?.suite }} - {{
+                        user?.address?.city }}</p>
+                    <p class="card-text mb-0">{{ user?.phone }}</p>
+                    <a [href]="user?.website" class="card-text mb-0">{{ user?.website }}</a>
+                    <p class="card-text">Company: {{ user?.company?.name }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col post-section">
+
+            <div class="row px-3 pt-2">
+                <nav aria-label="Page navigation example ">
+                    <ul class="pagination justify-content-between mb-0">
+                        <li class="page-item"><a class="page-link" (click)="prev()">Previous</a></li>
+                        <li class="page-item"><a class="page-link" (click)="next()">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="list-group m-3 posts">
+                <ng-container *ngFor="let ps of postsDisplay; let i = index">
+                    <a class="list-group-item list-group-item-action" aria-current="true">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h4 style="font-weight: bold;" class="mb-1">{{ ps.title }}</h4>
+                        </div>
+                        <p class="mb-1 text-justify">{{ ps.body }}.</p>
+                        <mat-expansion-panel #Ex hideToggle (click)="getComment(Ex, ps, i)">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <mat-icon>chat</mat-icon>
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    Comment
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <p *ngIf="ps.comments === undefined">There's no comment</p>
+                            <div *ngIf="!(ps.comments === undefined)" class="list-group">
+                                <ng-container *ngFor="let item of ps.comments">
+                                    <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h5 class="mb-1">{{ item.name }}</h5>
+                                            <small>{{ item.email }}</small>
+                                        </div>
+                                        <p class="mb-1 text-start">{{ item.body }}</p>
+                                    </a>
+                                </ng-container>
+                            </div>
+                        </mat-expansion-panel>
+                    </a>
+                </ng-container>
+
+            </div>
+
+        </div>
+    </div>
+</div>

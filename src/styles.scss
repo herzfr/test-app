@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+
+html,
+body {
+  min-height: 100vh;
+  height: auto;
+  margin: 0;
+}
+
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+* {
+  font-family: "Questrial", sans-serif;
+}
+
+body {
+  background-size: cover;
+  width: auto;
+  background-image: url("./assets/images/background1.jpg");
+  background-attachment: fixed;
+  background-position: top;
+  //   background-position: 50% 50%;
+}
+
+.backdropBackground {
+  backdrop-filter: blur(4px);
+  -webkit-filter: blur(5px) !important;
+  -moz-filter: blur(5px) !important;
+  -o-filter: blur(5px) !important;
+  -ms-filter: blur(5px) !important;
+  filter: blur(5px) !important;
+}

@@ -1,5 +1,9 @@
 # TestApp
 
+## Check Dependency Node Module
+
+Run `npm install` jika baru mengupload source code ini.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.9.
 
 ## Development server
@@ -25,3 +29,21 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Login | Tampilin data login
+
+Jika suda berjalan, masukan username dan password dibawah ini:
+username: Bret / Antonette / apa aja username yang ada di https://jsonplaceholder.typicode.com/users
+password: \*Terserah Apa Aja
+
+## Home | Tampilkan Postingan
+
+Jika sudah berhasil masuk, Semua test sudah ada dalam 1 halaman sesuai daftar dibawah ini:
+
+- Tampilkan Postingan
+- Buat Pagination local min 10 data per page
+- Logout
+- Detail Profile
+- Daftar Komentar tiap per posting
+
+Terima kasih :)
